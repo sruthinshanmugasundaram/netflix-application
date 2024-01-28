@@ -1,0 +1,22 @@
+{
+  "name": "netflix-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-api": "cd api && npm install",
+    "start-api": "cd api && npm start",
+    "install-admin": "cd admin && npm install",
+    "build-admin": "cd admin && npm run build",
+    "start-admin": "cd admin && npm start",
+    "install-client": "cd client && npm install",
+    "build-client": "cd client && npm run build",
+    "start-client": "cd client && npm start",
+    "install-all": "npm run install-api && npm run install-admin && npm run install-client",
+    "build-all": "npm run build-api && npm run build-admin && npm run build-client",
+    "start-all": "npm run start-api && npm run start-admin && npm run start-client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
