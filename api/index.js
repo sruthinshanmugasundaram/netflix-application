@@ -6,7 +6,7 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const movieRoute = require("./routes/movies");
 const listRoute = require("./routes/lists");
-const cors = require("cors");
+
 
 dotenv.config();
 
@@ -23,15 +23,8 @@ mongoose
     console.log("DB Connection Successful");
 
     // Middleware to parse JSON requests
-
     app.use(express.json());
-    const corsOptions = {
-      origin: 'https://quiet-phoenix-b409af.netlify.app',
-      credentials: true, // if you're using cookies or authentication headers
-    };
-    
-    app.use(cors(corsOptions));
-    
+
     // Routes
     app.use("/api/auth", authRoute);
     app.use("/api/users", userRoute);
