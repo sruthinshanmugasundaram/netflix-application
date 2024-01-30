@@ -1,0 +1,21 @@
+/* report.css */
+  .tableContainer {
+    margin-top: 20px;
+  }
+  
+  .reportTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .reportTable th,
+  .reportTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .reportTable th {
+    background-color: #f2f2f2;
+  }
