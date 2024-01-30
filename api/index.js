@@ -2,11 +2,11 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const cors = require("cors"); // Import cors module
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const movieRoute = require("./routes/movies");
 const listRoute = require("./routes/lists");
-
 
 dotenv.config();
 
@@ -15,6 +15,13 @@ app.use((err, req, res, next) => {
   console.error("Unhandled Error:", err);
   res.status(500).json({ error: "Internal Server Error" });
 });
+
+// Use cors middleware with specific origin(s)
+app.use(cors({
+  origin: ["https://netflix-app-43rl.onrender.com", "https://netflix-app-backend-sq6l.onrender.com"],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // enable set cookie
+}));
 
 // Connect to MongoDB using promises
 mongoose
